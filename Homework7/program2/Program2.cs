@@ -10,7 +10,7 @@ namespace program2
     public class Order
     {
         public string OrderNumber { set; get; }     //订单的订单号
-        //public DateTime OrderTime { set; get; }     //订单的订购时间
+        public DateTime OrderTime { set; get; }     //订单的订购时间
         public string Client { set; get; }          //订单的客户名称
         public string Creator { set; get; }         //订单的创建者
         public List<OrderDetails> OrderDetails { set; get; }    //订单明细
@@ -22,14 +22,14 @@ namespace program2
             OrderNumber = orderNumber;
             Client = client;
             Creator = creator;
-            //OrderTime = DateTime.Now;
+            OrderTime = DateTime.Now;
             OrderDetails orderDetails0 = new OrderDetails(goodsName, goodsPrice, goodsCounts);
             OrderDetails.Add(orderDetails0);
         }
 
         public override string ToString()
         {
-            string result = OrderNumber + "    " /*+ OrderTime + "    "*/ + Client + "    " + Creator + "    " + OrderDetails[0].GoodsName + "    " + OrderDetails[0].GoodsPrice + "    " + OrderDetails[0].GoodsCounts + "    " + OrderDetails[0].TotalPrice;
+            string result = OrderNumber + "\t" + OrderTime + "\t" + Client + "\t" + Creator + "\t" + OrderDetails[0].GoodsName + "\t" + OrderDetails[0].GoodsPrice + "\t" + OrderDetails[0].GoodsCounts + "\t" + OrderDetails[0].TotalPrice;
             return result;
         }
     }
@@ -111,8 +111,7 @@ namespace program2
                 {
                     throw new MyAppException("该订单已经被添加到订单表中，请勿重复添加");
                 }
-            }
-            
+            }    
         }
 
         public void DeleteOrder(Order order)           //删除订单
@@ -134,7 +133,7 @@ namespace program2
             if (orderList.Contains(order))
             {
                 order.OrderNumber = orderNumber;
-                //order.OrderTime = DateTime.Now;
+                order.OrderTime = DateTime.Now;
                 Console.WriteLine("订单的订单号修改成功");
             }
             else
@@ -148,7 +147,7 @@ namespace program2
             if (orderList.Contains(order))
             {
                 order.Client = client;
-                //order.OrderTime = DateTime.Now;
+                order.OrderTime = DateTime.Now;
                 Console.WriteLine("订单的客户名称修改成功");
             }
             else
@@ -164,7 +163,7 @@ namespace program2
                 order.OrderDetails[0].GoodsName = goodsName;
                 order.OrderDetails[0].GoodsPrice = goodsPrice;
                 order.OrderDetails[0].TotalPrice = goodsPrice * (order.OrderDetails[0].GoodsCounts);
-                //order.OrderTime = DateTime.Now;
+                order.OrderTime = DateTime.Now;
                 Console.WriteLine("订单的商品名称及商品单价修改成功");
             }
             else
@@ -178,8 +177,8 @@ namespace program2
             if (orderList.Contains(order))
             {
                 order.OrderDetails[0].GoodsCounts = goodsCounts;
-                order.OrderDetails[0].TotalPrice = goodsCounts * (order.OrderDetails[0].GoodsPrice);
-                //order.OrderTime = DateTime.Now;
+                order.OrderDetails[0].TotalPrice = goodsCounts * order.OrderDetails[0].GoodsPrice;
+                order.OrderTime = DateTime.Now;
                 Console.WriteLine("订单的商品数量修改成功");
             }
             else
@@ -188,62 +187,106 @@ namespace program2
             }
         }
 
-        public string SearchOrderByOrderNumber(string orderNumber)          //通过订单号查询订单
+        public List<Order> SearchOrderByOrderNumber(string orderNumber)          //通过订单号查询订单
         {
             var query = orderList
                        .Where(s => s.OrderNumber == orderNumber);
-            foreach (var s in query)
+            List<Order> theOrderList = query.ToList();
+            if(theOrderList.Count != 0)
             {
-                Console.WriteLine("订单查询成功");
-                return ($"{s.ToString()}");
+                Console.WriteLine("查询成功");
             }
-            return "查询失败";
+            return theOrderList;
         }
 
-        public string SearchOrderByGoodsName(string goodsName)        //通过商品名称查询订单
+        public List<Order> SearchOrderByGoodsName(string goodsName)        //通过商品名称查询订单
         {
             var query = orderList
                        .Where(s => s.OrderDetails[0].GoodsName == goodsName);
-            foreach (var s in query)
+            List<Order> theOrderList = query.ToList();
+            if (theOrderList.Count != 0)
             {
-                Console.WriteLine("订单查询成功");
-                return ($"{s.ToString()}");
+                Console.WriteLine("查询成功");
             }
-            return "查询失败";
+            return theOrderList;
         }
 
-        public string SearchOrderByOrderClient(string client)        //通过客户名称查询订单
+        public List<Order> SearchOrderByOrderClient(string client)        //通过客户名称查询订单
         {
             var query = orderList
                          .Where(s => s.Client == client);
-            foreach (var s in query)
+            List<Order> theOrderList = query.ToList();
+            if (theOrderList.Count != 0)
             {
-                Console.WriteLine("订单查询成功");
-                return  ($"{s.ToString()}");
+                Console.WriteLine("查询成功");
             }
-            return "查询失败";
+            return theOrderList;
         }
 
-        public void SearchOrderByOrderTotalPriceA(double money)        //查询订单金额大于某一数额的订单，并按金额升序排列
+        public List<Order> SearchOrderByOrderTotalPriceABig(double money)        //查询订单金额大于某一数额的订单，并按金额升序排列
         {
             var query = orderList
                          .Where(s => s.OrderDetails[0].TotalPrice > money)
                          .OrderBy(s => s.OrderDetails[0].TotalPrice);
-            foreach (var s in query)
+            List<Order> theOrderList = query.ToList();
+            if (theOrderList.Count != 0)
             {
-                Console.WriteLine($"{s.ToString()}");
+                Console.WriteLine("查询成功");
             }
+            return theOrderList;
+        }
+        public List<Order> SearchOrderByOrderTotalPriceASmall(double money)        //查询订单金额小于某一数额的订单，并按金额升序排列
+        {
+            var query = orderList
+                         .Where(s => s.OrderDetails[0].TotalPrice < money)
+                         .OrderBy(s => s.OrderDetails[0].TotalPrice);
+            List<Order> theOrderList = query.ToList();
+            if (theOrderList.Count != 0)
+            {
+                Console.WriteLine("查询成功");
+            }
+            return theOrderList;
         }
 
-        public void SearchOrderByOrderTotalPriceD(double money)        //查询订单金额大于某一数额的订单，并按金额降序排列
+        public List<Order> SearchOrderByOrderTotalPriceDBig(double money)        //查询订单金额大于某一数额的订单，并按金额降序排列
         {
             var query = orderList
                          .Where(s => s.OrderDetails[0].TotalPrice > money)
                          .OrderByDescending(s => s.OrderDetails[0].TotalPrice);
-            foreach (var s in query)
+            List<Order> theOrderList = query.ToList();
+            if (theOrderList.Count != 0)
             {
-                Console.WriteLine($"{s.ToString()}");
+                Console.WriteLine("查询成功");
             }
+            return theOrderList;
+            
+        }
+
+        public List<Order> SearchOrderByOrderTotalPriceDSmall(double money)        //查询订单金额小于某一数额的订单，并按金额降序排列
+        {
+            var query = orderList
+                         .Where(s => s.OrderDetails[0].TotalPrice < money)
+                         .OrderByDescending(s => s.OrderDetails[0].TotalPrice);
+            List<Order> theOrderList = query.ToList();
+            if (theOrderList.Count != 0)
+            {
+                Console.WriteLine("查询成功");
+            }
+            return theOrderList;
+        }
+
+        public string MyToString(List<Order> someOrderList)
+        {
+            if (someOrderList.Count == 0)
+            {
+                return "查询无果";
+            }
+            string result = "";
+            foreach (Order s in someOrderList)
+            {
+                result +=$"{s.ToString()}\n";
+            }
+            return result;
         }
     }
 
@@ -281,23 +324,31 @@ namespace program2
             Console.WriteLine();
 
             //通过订单号查询订单信息,并在控制台输出所查询订单的所有信息
-            Console.WriteLine(orderService.SearchOrderByOrderNumber("2018100603"));
+            Console.WriteLine(orderService.MyToString(orderService.SearchOrderByOrderNumber("2018100603")));
             Console.WriteLine();
 
             //通过商品名称查询订单信息,并在控制台输出所查询订单的所有信息
-            Console.WriteLine(orderService.SearchOrderByGoodsName("草莓"));
+            Console.WriteLine(orderService.MyToString(orderService.SearchOrderByGoodsName("草莓")));
             Console.WriteLine();
 
             //通过客户名称查询订单信息,并在控制台输出所查询订单的所有信息
-            Console.WriteLine(orderService.SearchOrderByOrderClient("陈2"));
+            Console.WriteLine(orderService.MyToString(orderService.SearchOrderByOrderClient("陈2")));
             Console.WriteLine();
 
             Console.WriteLine("查询订单金额大于一万的订单,并按金额升序排列");
-            orderService.SearchOrderByOrderTotalPriceA(10000);
+            Console.WriteLine(orderService.MyToString(orderService.SearchOrderByOrderTotalPriceABig(10000)));
             Console.WriteLine();
 
             Console.WriteLine("查询订单金额大于一万的订单,并按金额降序排列");
-            orderService.SearchOrderByOrderTotalPriceD(10000);
+            Console.WriteLine(orderService.MyToString(orderService.SearchOrderByOrderTotalPriceDBig(10000)));
+            Console.WriteLine();
+
+            Console.WriteLine("查询订单金额小于一万的订单,并按金额升序排列");
+            Console.WriteLine(orderService.MyToString(orderService.SearchOrderByOrderTotalPriceASmall(10000)));
+            Console.WriteLine();
+
+            Console.WriteLine("查询订单金额小于一万的订单,并按金额降序排列");
+            Console.WriteLine(orderService.MyToString(orderService.SearchOrderByOrderTotalPriceDSmall(10000)));
             Console.WriteLine();
 
             orderService.DeleteOrder(order3);     //删除订单 3 
