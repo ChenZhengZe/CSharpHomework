@@ -29,7 +29,11 @@ namespace program2
 
         public override string ToString()
         {
-            string result = OrderNumber + "\t" + OrderTime + "\t" + Client + "\t" + Creator + "\t" + OrderDetails[0].GoodsName + "\t" + OrderDetails[0].GoodsPrice + "\t" + OrderDetails[0].GoodsCounts + "\t" + OrderDetails[0].TotalPrice;
+            string result = OrderNumber + "\t" + OrderTime + "\t" + Client + "\t" + Creator + "\n" + "订单明细如下：";
+            foreach (OrderDetails theOrderDetails in OrderDetails)                                                  
+            {
+                result += theOrderDetails.GoodsName + "\t" + theOrderDetails.GoodsPrice + "\t" + theOrderDetails.GoodsCounts + "\t" + theOrderDetails.TotalPrice + "\n" + "              ";
+            }
             return result;
         }
     }
@@ -116,7 +120,6 @@ namespace program2
 
         public void DeleteOrder(Order order)           //删除订单
         {
-
             if (orderList.Contains(order))
             {
                 orderList.Remove(order);

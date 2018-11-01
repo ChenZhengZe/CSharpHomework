@@ -31,9 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.button12 = new System.Windows.Forms.Button();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.button11 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -63,38 +69,32 @@
             this.button10 = new System.Windows.Forms.Button();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button11 = new System.Windows.Forms.Button();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.button12 = new System.Windows.Forms.Button();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.goodsNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goodsPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goodsCountsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.orderNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.creatorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label11 = new System.Windows.Forms.Label();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.goodsNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goodsPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goodsCountsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(945, 373);
+            this.button2.Location = new System.Drawing.Point(950, 373);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(360, 42);
             this.button2.TabIndex = 1;
@@ -122,6 +122,53 @@
             this.panel3.Size = new System.Drawing.Size(1322, 162);
             this.panel3.TabIndex = 11;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.label11.Location = new System.Drawing.Point(943, 100);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(378, 42);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "        若要删除或修改订单\r\n请在左侧的订单列表中选定某一订单";
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(299, 134);
+            this.textBox16.Multiline = true;
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(638, 22);
+            this.textBox16.TabIndex = 24;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(0, 134);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(292, 23);
+            this.button12.TabIndex = 23;
+            this.button12.Text = "查询订单金额小于某一数额的订单（按升序排列）";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(299, 105);
+            this.textBox15.Multiline = true;
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(638, 23);
+            this.textBox15.TabIndex = 22;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(0, 105);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(292, 23);
+            this.button11.TabIndex = 21;
+            this.button11.Text = "查询订单金额大于某一数额的订单（按升序排列）";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(0, 8);
@@ -147,6 +194,19 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(638, 26);
             this.textBox8.TabIndex = 19;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Lime;
+            this.label8.Font = new System.Drawing.Font("楷体", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(952, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(372, 35);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "订单总数           ";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // button5
             // 
@@ -211,7 +271,7 @@
             this.textBox1.Location = new System.Drawing.Point(157, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 20);
+            this.textBox1.Size = new System.Drawing.Size(200, 20);
             this.textBox1.TabIndex = 5;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -223,7 +283,7 @@
             this.textBox2.Location = new System.Drawing.Point(157, 28);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(203, 20);
+            this.textBox2.Size = new System.Drawing.Size(200, 20);
             this.textBox2.TabIndex = 6;
             // 
             // button1
@@ -245,7 +305,7 @@
             this.textBox3.Location = new System.Drawing.Point(157, 54);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(203, 20);
+            this.textBox3.Size = new System.Drawing.Size(200, 20);
             this.textBox3.TabIndex = 7;
             // 
             // panel2
@@ -453,6 +513,24 @@
             this.panel4.Size = new System.Drawing.Size(360, 150);
             this.panel4.TabIndex = 26;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(289, 66);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 12);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "商品单价";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(180, 66);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 12);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "商品名称";
+            // 
             // textBox10
             // 
             this.textBox10.Location = new System.Drawing.Point(167, 5);
@@ -476,119 +554,6 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(493, 409);
             this.dataGridView1.TabIndex = 27;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(180, 66);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 12);
-            this.label9.TabIndex = 28;
-            this.label9.Text = "商品名称";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(289, 66);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 12);
-            this.label10.TabIndex = 29;
-            this.label10.Text = "商品单价";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Lime;
-            this.label8.Font = new System.Drawing.Font("楷体", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(952, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(372, 35);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "订单总数           ";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.goodsNameDataGridViewTextBoxColumn,
-            this.goodsPriceDataGridViewTextBoxColumn,
-            this.goodsCountsDataGridViewTextBoxColumn,
-            this.totalPriceDataGridViewTextBoxColumn});
-            this.dataGridView2.DataMember = "OrderDetails";
-            this.dataGridView2.DataSource = this.bindingSource1;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dataGridView2.Location = new System.Drawing.Point(493, 162);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(444, 409);
-            this.dataGridView2.TabIndex = 28;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(0, 105);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(292, 23);
-            this.button11.TabIndex = 21;
-            this.button11.Text = "查询订单金额大于某一数额的订单（按升序排列）";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(299, 105);
-            this.textBox15.Multiline = true;
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(638, 23);
-            this.textBox15.TabIndex = 22;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(0, 134);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(292, 23);
-            this.button12.TabIndex = 23;
-            this.button12.Text = "查询订单金额小于某一数额的订单（按升序排列）";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(299, 134);
-            this.textBox16.Multiline = true;
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(638, 22);
-            this.textBox16.TabIndex = 24;
-            // 
-            // goodsNameDataGridViewTextBoxColumn
-            // 
-            this.goodsNameDataGridViewTextBoxColumn.DataPropertyName = "GoodsName";
-            this.goodsNameDataGridViewTextBoxColumn.HeaderText = "GoodsName";
-            this.goodsNameDataGridViewTextBoxColumn.Name = "goodsNameDataGridViewTextBoxColumn";
-            // 
-            // goodsPriceDataGridViewTextBoxColumn
-            // 
-            this.goodsPriceDataGridViewTextBoxColumn.DataPropertyName = "GoodsPrice";
-            this.goodsPriceDataGridViewTextBoxColumn.HeaderText = "GoodsPrice";
-            this.goodsPriceDataGridViewTextBoxColumn.Name = "goodsPriceDataGridViewTextBoxColumn";
-            // 
-            // goodsCountsDataGridViewTextBoxColumn
-            // 
-            this.goodsCountsDataGridViewTextBoxColumn.DataPropertyName = "GoodsCounts";
-            this.goodsCountsDataGridViewTextBoxColumn.HeaderText = "GoodsCounts";
-            this.goodsCountsDataGridViewTextBoxColumn.Name = "goodsCountsDataGridViewTextBoxColumn";
-            // 
-            // totalPriceDataGridViewTextBoxColumn
-            // 
-            this.totalPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalPrice";
-            this.totalPriceDataGridViewTextBoxColumn.HeaderText = "TotalPrice";
-            this.totalPriceDataGridViewTextBoxColumn.Name = "totalPriceDataGridViewTextBoxColumn";
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(program2.Order);
             // 
             // orderNumberDataGridViewTextBoxColumn
             // 
@@ -615,16 +580,51 @@
             this.creatorDataGridViewTextBoxColumn.HeaderText = "Creator";
             this.creatorDataGridViewTextBoxColumn.Name = "creatorDataGridViewTextBoxColumn";
             // 
-            // label11
+            // bindingSource1
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("楷体", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label11.Location = new System.Drawing.Point(943, 100);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(378, 42);
-            this.label11.TabIndex = 25;
-            this.label11.Text = "        若要删除或修改订单\r\n请在左侧的订单列表中选定某一订单";
+            this.bindingSource1.DataSource = typeof(program2.Order);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.goodsNameDataGridViewTextBoxColumn,
+            this.goodsPriceDataGridViewTextBoxColumn,
+            this.goodsCountsDataGridViewTextBoxColumn,
+            this.totalPriceDataGridViewTextBoxColumn});
+            this.dataGridView2.DataMember = "OrderDetails";
+            this.dataGridView2.DataSource = this.bindingSource1;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.dataGridView2.Location = new System.Drawing.Point(493, 162);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 23;
+            this.dataGridView2.Size = new System.Drawing.Size(444, 409);
+            this.dataGridView2.TabIndex = 28;
+            // 
+            // goodsNameDataGridViewTextBoxColumn
+            // 
+            this.goodsNameDataGridViewTextBoxColumn.DataPropertyName = "GoodsName";
+            this.goodsNameDataGridViewTextBoxColumn.HeaderText = "GoodsName";
+            this.goodsNameDataGridViewTextBoxColumn.Name = "goodsNameDataGridViewTextBoxColumn";
+            // 
+            // goodsPriceDataGridViewTextBoxColumn
+            // 
+            this.goodsPriceDataGridViewTextBoxColumn.DataPropertyName = "GoodsPrice";
+            this.goodsPriceDataGridViewTextBoxColumn.HeaderText = "GoodsPrice";
+            this.goodsPriceDataGridViewTextBoxColumn.Name = "goodsPriceDataGridViewTextBoxColumn";
+            // 
+            // goodsCountsDataGridViewTextBoxColumn
+            // 
+            this.goodsCountsDataGridViewTextBoxColumn.DataPropertyName = "GoodsCounts";
+            this.goodsCountsDataGridViewTextBoxColumn.HeaderText = "GoodsCounts";
+            this.goodsCountsDataGridViewTextBoxColumn.Name = "goodsCountsDataGridViewTextBoxColumn";
+            // 
+            // totalPriceDataGridViewTextBoxColumn
+            // 
+            this.totalPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalPrice";
+            this.totalPriceDataGridViewTextBoxColumn.HeaderText = "TotalPrice";
+            this.totalPriceDataGridViewTextBoxColumn.Name = "totalPriceDataGridViewTextBoxColumn";
             // 
             // Form1
             // 
@@ -650,8 +650,8 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
