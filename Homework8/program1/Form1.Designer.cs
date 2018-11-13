@@ -67,30 +67,30 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.orderNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientPhoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.creatorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.goodsNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goodsPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goodsCountsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnExport = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.goodsNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goodsPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.goodsCountsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.orderNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientPhoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.creatorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -506,6 +506,43 @@
             this.dataGridView1.TabIndex = 27;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
+            // orderNumberDataGridViewTextBoxColumn
+            // 
+            this.orderNumberDataGridViewTextBoxColumn.DataPropertyName = "OrderNumber";
+            this.orderNumberDataGridViewTextBoxColumn.HeaderText = "OrderNumber";
+            this.orderNumberDataGridViewTextBoxColumn.Name = "orderNumberDataGridViewTextBoxColumn";
+            this.orderNumberDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // orderTimeDataGridViewTextBoxColumn
+            // 
+            this.orderTimeDataGridViewTextBoxColumn.DataPropertyName = "OrderTime";
+            this.orderTimeDataGridViewTextBoxColumn.HeaderText = "OrderTime";
+            this.orderTimeDataGridViewTextBoxColumn.Name = "orderTimeDataGridViewTextBoxColumn";
+            this.orderTimeDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // clientDataGridViewTextBoxColumn
+            // 
+            this.clientDataGridViewTextBoxColumn.DataPropertyName = "Client";
+            this.clientDataGridViewTextBoxColumn.HeaderText = "Client";
+            this.clientDataGridViewTextBoxColumn.Name = "clientDataGridViewTextBoxColumn";
+            this.clientDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // clientPhoneDataGridViewTextBoxColumn
+            // 
+            this.clientPhoneDataGridViewTextBoxColumn.DataPropertyName = "ClientPhone";
+            this.clientPhoneDataGridViewTextBoxColumn.HeaderText = "ClientPhone";
+            this.clientPhoneDataGridViewTextBoxColumn.Name = "clientPhoneDataGridViewTextBoxColumn";
+            // 
+            // creatorDataGridViewTextBoxColumn
+            // 
+            this.creatorDataGridViewTextBoxColumn.DataPropertyName = "Creator";
+            this.creatorDataGridViewTextBoxColumn.HeaderText = "Creator";
+            this.creatorDataGridViewTextBoxColumn.Name = "creatorDataGridViewTextBoxColumn";
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(program2.Order);
+            // 
             // dataGridView2
             // 
             this.dataGridView2.AutoGenerateColumns = false;
@@ -523,6 +560,34 @@
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(404, 538);
             this.dataGridView2.TabIndex = 28;
+            // 
+            // goodsNameDataGridViewTextBoxColumn
+            // 
+            this.goodsNameDataGridViewTextBoxColumn.DataPropertyName = "GoodsName";
+            this.goodsNameDataGridViewTextBoxColumn.HeaderText = "GoodsName";
+            this.goodsNameDataGridViewTextBoxColumn.Name = "goodsNameDataGridViewTextBoxColumn";
+            this.goodsNameDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // goodsPriceDataGridViewTextBoxColumn
+            // 
+            this.goodsPriceDataGridViewTextBoxColumn.DataPropertyName = "GoodsPrice";
+            this.goodsPriceDataGridViewTextBoxColumn.HeaderText = "GoodsPrice";
+            this.goodsPriceDataGridViewTextBoxColumn.Name = "goodsPriceDataGridViewTextBoxColumn";
+            this.goodsPriceDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // goodsCountsDataGridViewTextBoxColumn
+            // 
+            this.goodsCountsDataGridViewTextBoxColumn.DataPropertyName = "GoodsCounts";
+            this.goodsCountsDataGridViewTextBoxColumn.HeaderText = "GoodsCounts";
+            this.goodsCountsDataGridViewTextBoxColumn.Name = "goodsCountsDataGridViewTextBoxColumn";
+            this.goodsCountsDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // totalPriceDataGridViewTextBoxColumn
+            // 
+            this.totalPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalPrice";
+            this.totalPriceDataGridViewTextBoxColumn.HeaderText = "TotalPrice";
+            this.totalPriceDataGridViewTextBoxColumn.Name = "totalPriceDataGridViewTextBoxColumn";
+            this.totalPriceDataGridViewTextBoxColumn.Width = 90;
             // 
             // button3
             // 
@@ -571,71 +636,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // goodsNameDataGridViewTextBoxColumn
-            // 
-            this.goodsNameDataGridViewTextBoxColumn.DataPropertyName = "GoodsName";
-            this.goodsNameDataGridViewTextBoxColumn.HeaderText = "GoodsName";
-            this.goodsNameDataGridViewTextBoxColumn.Name = "goodsNameDataGridViewTextBoxColumn";
-            this.goodsNameDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // goodsPriceDataGridViewTextBoxColumn
-            // 
-            this.goodsPriceDataGridViewTextBoxColumn.DataPropertyName = "GoodsPrice";
-            this.goodsPriceDataGridViewTextBoxColumn.HeaderText = "GoodsPrice";
-            this.goodsPriceDataGridViewTextBoxColumn.Name = "goodsPriceDataGridViewTextBoxColumn";
-            this.goodsPriceDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // goodsCountsDataGridViewTextBoxColumn
-            // 
-            this.goodsCountsDataGridViewTextBoxColumn.DataPropertyName = "GoodsCounts";
-            this.goodsCountsDataGridViewTextBoxColumn.HeaderText = "GoodsCounts";
-            this.goodsCountsDataGridViewTextBoxColumn.Name = "goodsCountsDataGridViewTextBoxColumn";
-            this.goodsCountsDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // totalPriceDataGridViewTextBoxColumn
-            // 
-            this.totalPriceDataGridViewTextBoxColumn.DataPropertyName = "TotalPrice";
-            this.totalPriceDataGridViewTextBoxColumn.HeaderText = "TotalPrice";
-            this.totalPriceDataGridViewTextBoxColumn.Name = "totalPriceDataGridViewTextBoxColumn";
-            this.totalPriceDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(program2.Order);
-            // 
-            // orderNumberDataGridViewTextBoxColumn
-            // 
-            this.orderNumberDataGridViewTextBoxColumn.DataPropertyName = "OrderNumber";
-            this.orderNumberDataGridViewTextBoxColumn.HeaderText = "OrderNumber";
-            this.orderNumberDataGridViewTextBoxColumn.Name = "orderNumberDataGridViewTextBoxColumn";
-            this.orderNumberDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // orderTimeDataGridViewTextBoxColumn
-            // 
-            this.orderTimeDataGridViewTextBoxColumn.DataPropertyName = "OrderTime";
-            this.orderTimeDataGridViewTextBoxColumn.HeaderText = "OrderTime";
-            this.orderTimeDataGridViewTextBoxColumn.Name = "orderTimeDataGridViewTextBoxColumn";
-            this.orderTimeDataGridViewTextBoxColumn.Width = 110;
-            // 
-            // clientDataGridViewTextBoxColumn
-            // 
-            this.clientDataGridViewTextBoxColumn.DataPropertyName = "Client";
-            this.clientDataGridViewTextBoxColumn.HeaderText = "Client";
-            this.clientDataGridViewTextBoxColumn.Name = "clientDataGridViewTextBoxColumn";
-            this.clientDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // clientPhoneDataGridViewTextBoxColumn
-            // 
-            this.clientPhoneDataGridViewTextBoxColumn.DataPropertyName = "ClientPhone";
-            this.clientPhoneDataGridViewTextBoxColumn.HeaderText = "ClientPhone";
-            this.clientPhoneDataGridViewTextBoxColumn.Name = "clientPhoneDataGridViewTextBoxColumn";
-            // 
-            // creatorDataGridViewTextBoxColumn
-            // 
-            this.creatorDataGridViewTextBoxColumn.DataPropertyName = "Creator";
-            this.creatorDataGridViewTextBoxColumn.HeaderText = "Creator";
-            this.creatorDataGridViewTextBoxColumn.Name = "creatorDataGridViewTextBoxColumn";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -662,8 +662,8 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }

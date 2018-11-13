@@ -62,7 +62,7 @@
                     <xsl:value-of select="TotalPrice" />
                   </td>
                 </xsl:for-each>
-              </xsl:for-each> 
+              </xsl:for-each>
             </tr>
           </xsl:for-each>
         </table>

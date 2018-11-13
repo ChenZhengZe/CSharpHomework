@@ -82,6 +82,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Orders.xslt" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\program2\program2.csproj">
       <Project>{5a004d50-9775-4952-86e8-f31dd3338d3e}</Project>
       <Name>program2</Name>

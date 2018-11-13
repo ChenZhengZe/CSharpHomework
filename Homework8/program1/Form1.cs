@@ -18,13 +18,13 @@ namespace program1
         public Form1()
         {
             InitializeComponent();
-            Order order1 = new Order("20181112001", "陈1", "13949496191", "陈志鹏", "月饼", 2100, 100);
-            Order order2 = new Order("20181112002", "陈2", "13949496192", "陈志鹏", "方便面", 1000, 1000);
-            Order order3 = new Order("20181112003", "陈3", "13949496193", "陈志鹏", "苹果", 1000, 2530);
-            Order order4 = new Order("20181112004", "陈4", "13949496194", "陈志鹏", "草莓", 2045, 400);
-            Order order5 = new Order("20181112005", "陈5", "13949496195", "陈志鹏", "香蕉", 205, 700);
-            Order order6 = new Order("20181112006", "陈6", "13949496196", "陈志鹏", "橘子", 45, 800);
-            Order order7 = new Order("20181112007", "陈7", "13949496197", "陈志鹏", "橙子", 205, 900);
+            Order order1 = new Order("20181113001", "陈1", "13949496191", "陈志鹏", "月饼", 2100, 100);
+            Order order2 = new Order("20181113002", "陈2", "13949496192", "陈志鹏", "方便面", 1000, 1000);
+            Order order3 = new Order("20181113003", "陈3", "13949496193", "陈志鹏", "苹果", 1000, 2530);
+            Order order4 = new Order("20181113004", "陈4", "13949496194", "陈志鹏", "草莓", 2045, 400);
+            Order order5 = new Order("20181113005", "陈5", "13949496195", "陈志鹏", "香蕉", 205, 700);
+            Order order6 = new Order("20181113006", "陈6", "13949496196", "陈志鹏", "橘子", 45, 800);
+            Order order7 = new Order("20181113007", "陈7", "13949496197", "陈志鹏", "橙子", 205, 900);
 
             neworderService.AddOrder(order1);
             neworderService.AddOrder(order2);
@@ -467,14 +467,22 @@ namespace program1
             }
         }
 
-        //导出订单为XML文件
+        //导出订单为XML文件或HTML文件
         private void btnExport_Click(object sender, EventArgs e)
         {
             DialogResult result = saveFileDialog1.ShowDialog();
             if (result.Equals(DialogResult.OK))
             {
                 string fileName = saveFileDialog1.FileName;
-                neworderService.Export(fileName);   
+                if (saveFileDialog1.FilterIndex == 1)
+                {
+                    neworderService.Export(fileName);
+                }
+                else
+                {
+                    neworderService.ExportToHTML(neworderService.Export(), fileName);
+                }
+                 
             }
         }
 

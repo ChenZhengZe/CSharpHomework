@@ -305,7 +305,6 @@ namespace program2
             return theOrderList;
         }
 
-        //根据当前时间获取文件名
         public string Export()         
         {
             DateTime time = System.DateTime.Now;
@@ -324,7 +323,7 @@ namespace program2
                 xs.Serialize(fs, orderList);
             }
         }
-        //从XML文件中载入订单
+        //从XML文件中导入订单
         public void Import(string path)
         {
             if (Path.GetExtension(path) != ".xml")
@@ -350,7 +349,7 @@ namespace program2
             }
         }
         //通过XSLT将XML文件导出为HTML文件
-        public void ExportToXTML(string path)           
+        public void ExportToHTML(string path, string fileName)           
         {
             try
             {
@@ -361,9 +360,9 @@ namespace program2
                 nav.MoveToRoot();
 
                 XslCompiledTransform xt = new XslCompiledTransform();
-                xt.Load(@".\..\..\Orders.xslt");
+                xt.Load(@"..\..\Orders.xslt");
 
-                FileStream outFileStream = File.OpenWrite(@".\Orders.html");
+                FileStream outFileStream = File.OpenWrite(fileName);
                 XmlTextWriter writer = new XmlTextWriter(outFileStream, System.Text.Encoding.UTF8);
                 xt.Transform(nav, null, writer);
             }
@@ -376,7 +375,7 @@ namespace program2
                 Console.WriteLine("XSLT Exception:" + e.ToString());
             }
         }
-
+       
         public string MyToString(List<Order> someOrderList)
         {
             if (someOrderList.Count == 0)
@@ -399,21 +398,21 @@ namespace program2
             OrderService orderService = OrderService.GetInstance();             //定义一个订单服务类的实例,该实例是唯一的
             try
             {
-                Order order1 = new Order("20181112001", "陈1", "13949496191", "陈志鹏", "月饼", 2100, 100);
+                Order order1 = new Order("20181113001", "陈1", "13949496191", "陈志鹏", "月饼", 2100, 100);
                 orderService.AddOrder(order1);            //添加订单
                 //在控制台输出订单 1 的所有信息
                 Console.WriteLine(order1.ToString());   
                 Console.WriteLine();
 
-                Order order2 = new Order("20181112002", "陈2", "13949496192", "陈志鹏", "方便面", 1000, 1000);
+                Order order2 = new Order("20181113002", "陈2", "13949496192", "陈志鹏", "方便面", 1000, 1000);
                 orderService.AddOrder(order2);
                 Console.WriteLine("现在订单表中订单的个数为" + orderService.GetOrderCounts());
                 Console.WriteLine();
 
                 orderService.Export();     //将所有订单序列化为XML文件       
-                orderService.ExportToXTML(orderService.Export());     //通过XSLT将XML文件导出为HTML文件
+                orderService.ExportToHTML(orderService.Export(), @"..\..\Orders.html");     //通过XSLT将XML文件导出为HTML文件
 
-                //Order order3 = new Order("20181112003", "陈3", "03949496193", "陈志鹏", "苹果", 1000, 2530);           //客户号码出现异常
+                //Order order3 = new Order("20181113003", "陈3", "03949496193", "陈志鹏", "苹果", 1000, 2530);           //客户号码出现异常
                 //orderService.AddOrder(order3);
                 //Console.WriteLine("现在订单表中订单的个数为" + orderService.GetOrderCounts());
                 //Console.WriteLine();
